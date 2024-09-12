@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+html, body { 
+    font-family: "Anuphan", sans-serif;
+    color: #525252;
+    width: 100vw;  
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+input{
+    height: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border : 1px solid #d4d2d2;
+    background-color: #FAFAFA;
+    padding: 0px 12px 0px 12px;
+
+}
