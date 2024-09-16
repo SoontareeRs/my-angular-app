@@ -1,77 +1,89 @@
-<div class="registration-form-component">
-  <div class="wrapper">
-    <div class="container">
-      <div class="header">
-        <h1>Registration Form</h1>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show': isVisible}" (click)="close()">
+  <div class="modal-dialog" role="document" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <button type="button" class="close" aria-label="Close" (click)="close()">
+          <span caria-hidden="true">&times;</span>
+        </button>
       </div>
 
-      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
-        <div class="form-group-row">
-          <div class="form-group form-group-firstName">
-            <label for="firstName">First Name</label>
-            <input type="text" id="firstName" formControlName="firstName" required minlength="1"
-              aria-label="First Name" />
-          </div>
-          <div class="form-group form-group-lastName">
-            <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" formControlName="lastName" required minlength="1" aria-label="Last Name" />
-          </div>
-        </div>
 
-        <div class="form-group-row">
-          <div class="form-group">
-            <label for="birthDay">BirthDay</label>
-            <input class="form-group-birthDay-input" type="date" id="birthDay" formControlName="birthDay" required
-              aria-label="Birthday" />
-          </div>
-
-          <div class="form-group">
-            <legend>Gender</legend>
-            <div class="form-radio">
-              <div class="form-radio-input">
-                <input type="radio" id="male" formControlName="gender" value="male" aria-label="Male" />
-                <label for="male">Male</label>
+      <div class="modal-body">
+        <div class="registration-form-component">
+          
+          <div class="wrapper">
+            <div class="container">
+              <div class="header">
+                <h1>Registration Form</h1>
               </div>
 
-              <div class="form-radio-input">
-                <input type="radio" id="female" formControlName="gender" value="female" aria-label="Female" />
-                <label for="female">Female</label>
-              </div>
+              <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form">
+                <div class="form-group-row">
+                  <div class="form-group form-group-firstName">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" formControlName="firstName" required minlength="1" aria-label="First Name" />
+                  </div>
+                  <div class="form-group form-group-lastName">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" formControlName="lastName" required minlength="1" aria-label="Last Name" />
+                  </div>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="birthDay">BirthDay</label>
+                    <input class="form-group-birthDay-input" type="date" id="birthDay" formControlName="birthDay" required aria-label="Birthday" />
+                  </div>
+                  <div class="form-group">
+                    <legend>Gender</legend>
+                    <div class="form-radio">
+                      <div class="form-radio-input">
+                        <input type="radio" id="male" formControlName="gender" value="male" aria-label="Male" />
+                        <label for="male">Male</label>
+                      </div>
+                      <div class="form-radio-input">
+                        <input type="radio" id="female" formControlName="gender" value="female" aria-label="Female" />
+                        <label for="female">Female</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group-row">
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" formControlName="email" aria-label="Email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" formControlName="phoneNumber" aria-label="Phone Number" required />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="role-select">Choose your role</label>
+                  <select id="role-select" formControlName="role" aria-label="Role" required>
+                    <option value="">Choose option</option>
+                    <option value="intern">Intern</option>
+                    <option value="tester">Tester</option>
+                    <option value="developer">Developer</option>
+                    <option value="scrum-master">Scrum Master</option>
+                    <option value="product-manager">Product Manager</option>
+                    <option value="product-owner">Product Owner</option>
+                    <option value="ceo">CEO</option>
+                  </select>
+                </div>
+  
+                <div class="modal-footer">
+                  <button type="submit" class="cancle-button" (click)="close()">Cancle</button>
+
+                  <button type="submit" class="submit-button">Submit</button>
+                </div>
+              </form>
+              
             </div>
           </div>
-        </div>
 
-        <div class="form-group-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" formControlName="email" aria-label="Email" required />
-          </div>
-
-          <div class="form-group">
-            <label for="phoneNumber">Phone Number</label>
-            <input type="tel" id="phoneNumber" formControlName="phoneNumber" aria-label="Phone Number" required />
-          </div>
         </div>
-
-        <div class="form-group">
-          <label for="role-select">Choose your role</label>
-          <select id="role-select" formControlName="role" aria-label="Role" required>
-            <option value="">Choose option</option>
-            <option value="intern">Intern</option>
-            <option value="tester">Tester</option>
-            <option value="developer">Developer</option>
-            <option value="scrum-master">Scrum Master</option>
-            <option value="product-manager">Product Manager</option>
-            <option value="product-owner">Product Owner</option>
-            <option value="ceo">CEO</option>
-          </select>
-        </div>
-
-        <div class="form-group btn">
-          <button type="submit" class="submit-button">Submit</button>
-        </div>
-      </form>
+      </div>
     </div>
   </div>
-
 </div>

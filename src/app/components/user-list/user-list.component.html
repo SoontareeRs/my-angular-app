@@ -1,0 +1,41 @@
+<div class="user-list">
+    <h1>Hello List Users</h1>
+    <div>
+        <a href="#" (click)="openModal()"> 
+            <i class="fa-solid fa-plus"></i>
+        </a>
+        <app-registration-form></app-registration-form>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>BirthDay</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Role</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.firstName }}</td>
+                    <td>{{ user.lastName }}</td>
+                    <td>{{ user.birthDay }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phoneNumber }}</td>
+                    <td>{{ user.role }}</td>
+                    <td><i class="fa-solid fa-pen-to-square"></i></td>
+                    <td><i class="fa-solid fa-trash"></i></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

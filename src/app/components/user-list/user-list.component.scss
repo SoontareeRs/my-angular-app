@@ -1,0 +1,44 @@
+/* Style for the table container */
+div {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Style for the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Style for table headers */
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 12px 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Style for table cells */
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Style for alternating row colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Optional: Add border and box-shadow to the table */
+table {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
